@@ -66,6 +66,15 @@ plt.show()
 ### for the data and store them to a list called pred
 
 
+from sklearn.cluster import KMeans
+classifier = KMeans(n_clusters = 2)
+pred = classifier.fit_predict(finance_features)
+
+
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+scaler.fit_transform(finance_features)
+print finance_features
 
 
 ### rename the "name" parameter when you change the number of features

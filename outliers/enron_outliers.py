@@ -10,10 +10,20 @@ from feature_format import featureFormat, targetFeatureSplit
 ### read in data dictionary, convert to numpy array
 data_dict = pickle.load( open("../final_project/final_project_dataset.pkl", "r") )
 features = ["salary", "bonus"]
+print data_dict["TOTAL"]
+data_dict.pop("TOTAL",0)
+#data_dict.pop()
 data = featureFormat(data_dict, features)
-
+print data
 
 ### your code below
+for point in data:
+    salary = point[0]
+    bonus = point[1]
+    matplotlib.pyplot.scatter( salary, bonus )
 
+matplotlib.pyplot.xlabel("salary")
+matplotlib.pyplot.ylabel("bonus")
+matplotlib.pyplot.show()
 
 
